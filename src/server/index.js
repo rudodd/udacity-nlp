@@ -23,14 +23,10 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// Cors for cross origin allowance
-// const cors = require('cors');
-// app.use(cors());
-
 console.log(__dirname)
 
 app.get('/', function (req, res) {
-  // res.sendFile('dist/index.html')
+  //res.sendFile('dist/index.html');
   res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
@@ -42,7 +38,7 @@ app.listen(8080, function () {
 function callAylien(text) {
   return new Promise(resolve => {
     textapi.sentiment({
-      'text': text
+      'url': text
     }, function(error, response) {
       if (error === null) {
         resolve(response);
@@ -52,10 +48,8 @@ function callAylien(text) {
 }
 
 const getAylienData = async(req, res)=> {
-  console.log('running');
   let data = await callAylien(req.body.text);
   try {
-    console.log(data);
     textAnalysis = data;
     res.send('posted');
   } catch(error) {
@@ -65,5 +59,6 @@ const getAylienData = async(req, res)=> {
 
 app.post('/post-data', getAylienData);
 app.get('/get-data', function (req, res) {
+  console.log(textAnalysis);
   res.send(textAnalysis);
 });

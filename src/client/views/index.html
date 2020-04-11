@@ -2,27 +2,62 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>Test</title>
+  <title>Rustin's Aylien Text Analysis</title>
 </head>
 <body>
   <header>
-    <div class="">
-      Logo
+    <div class="logo">
+      <h1>Rustin's NLP</h1>
     </div>
-    <div class="">
-      navigation
+    <div class="nav">
+      <nav>
+        <ul>
+          <li>
+            <button class="clear-button">Clear Results</button>
+          </li>
+        </ul>
+      </nav>
     </div>
   </header>
   <main>
     <section>
       <form class=""">
-        <input id="name" type="text" name="input" value="" placeholder="Name">
-        <input type="submit" name="" value="submit">
+        <div class="error-text hidden">
+          <p>Please enter a valid URL</p>
+        </div>
+        <input id="url" type="text" name="url" value="" placeholder="Enter the URL of an article to analyze">
+        <input type="submit" name="" value="Analyze">
       </form>
     <section>
     <section>
-      <strong>Form Results:</strong>
-      <div id="results"></div>
+      <div id="results">
+
+        <!-- <div class="results-container">
+          <h2>Results of analysis:</h2>
+          <table>
+            <thead>
+              <tr>
+                <td>&nbsp;</td>
+                <th>Result</th>
+                <th>Confidence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Polarity</th>
+                <td>polarity</td>
+                <td>90%</td>
+              </tr>
+              <tr>
+                <th scope="row">Subjectivity</th>
+                <td>subjective</td>
+                <td>100%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div> -->
+
+      </div>
     </section>
   </main>
   <footer>

@@ -2,6 +2,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: #f5f5f5;
+  font-family: Arial, Helvetica, sans-serif;
 
   main {
     flex: 2;
@@ -9,6 +11,72 @@ body {
     section {
       max-width: 800px;
       margin: 50px auto;
+
+      .results-container {
+        background: white;
+        border-radius: 3px;
+        padding: 40px;
+        box-shadow: 0 0 5px 5px rgba(0,0,0, 0.015);
+
+        h2 {
+          font-size: 20px;
+          color: #323232;
+          margin-bottom: 15px;
+        }
+
+        table {
+          width: 100%;
+
+          th,
+          td {
+            padding: 10px;
+            border-top: solid 1px #e7e7e7;
+            border-bottom: solid 1px #e7e7e7;
+          }
+
+          thead {
+
+            th {
+              background: #323232;
+              color: white;
+              border: 0;
+              font-weight: bold;
+            }
+
+            td {
+              border: 0;
+            }
+          }
+
+          tbody {
+
+            tr {
+
+              &:nth-of-type(even) {
+
+                th,
+                td {
+                  background: #f5f5f5;
+                }
+              }
+
+              th {
+                font-weight: bold;
+                text-align: left;
+                border-left: solid 1px #e7e7e7;
+              }
+
+              td {
+                text-align: center;
+
+                &:nth-of-type(2) {
+                  border-right: solid 1px #e7e7e7;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

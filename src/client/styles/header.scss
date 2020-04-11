@@ -2,4 +2,27 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 10px 40px;
+
+  .logo {
+
+    h1 {
+      font-size: 24px;
+      color: #006994;
+      font-weight: bold;
+    }
+  }
+
+  .nav {
+
+    button {
+      background: #006994;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 7px 15px;
+      border: 0;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  }
 }
