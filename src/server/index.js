@@ -59,6 +59,5 @@ const getAylienData = async(req, res)=> {
 
 app.post('/post-data', getAylienData);
 app.get('/get-data', function (req, res) {
-  console.log(textAnalysis);
   res.send(textAnalysis);
 });

@@ -16,7 +16,6 @@ export function handleSubmit(e) {
 
   // Get all entry data from the server
   const getData = async ()=> {
-    console.log('getting');
     const request = await fetch('/get-data');
     try {
       let analysis = await request.json();

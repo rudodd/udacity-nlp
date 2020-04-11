@@ -16,6 +16,3 @@ document.querySelector('.clear-button').addEventListener('click', function() {
 document.querySelector('form input[type=submit]').addEventListener('click', (e)=> {
   handleSubmit(e);
 });
-
-//alert("I EXIST")
-console.log("CHANGE!!");
