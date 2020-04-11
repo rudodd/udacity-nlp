@@ -18,6 +18,9 @@ module.exports = {
       }
     ]
   },
+  output: {
+    filename: 'app.js'
+  },
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/client/views/index.html",
