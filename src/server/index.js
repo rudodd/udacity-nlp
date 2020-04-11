@@ -1,10 +1,11 @@
+let textAnalysis = {};
+
 // Bring in environment variables
 const dotenv = require('dotenv');
 dotenv.config();
 
 var path = require('path')
 const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
 
 // Aylien setup
 var aylien = require('aylien_textapi')
@@ -16,6 +17,15 @@ var textapi = new aylien({
 const app = express()
 
 app.use(express.static('dist'))
+
+//Here we are configuring express to use body-parser as middle-ware.
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Cors for cross origin allowance
+// const cors = require('cors');
+// app.use(cors());
 
 console.log(__dirname)
 
@@ -29,6 +39,31 @@ app.listen(8080, function () {
   console.log('Example app listening on port 8080!')
 })
 
-app.get('/test', function (req, res) {
-  res.send(mockAPIResponse)
-})
+function callAylien(text) {
+  return new Promise(resolve => {
+    textapi.sentiment({
+      'text': text
+    }, function(error, response) {
+      if (error === null) {
+        resolve(response);
+      }
+    });
+  });
+}
+
+const getAylienData = async(req, res)=> {
+  console.log('running');
+  let data = await callAylien(req.body.text);
+  try {
+    console.log(data);
+    textAnalysis = data;
+    res.send('posted');
+  } catch(error) {
+    console.log(error);
+  }
+}
+
+app.post('/post-data', getAylienData);
+app.get('/get-data', function (req, res) {
+  res.send(textAnalysis);
+});
