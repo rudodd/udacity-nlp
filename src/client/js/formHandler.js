@@ -55,9 +55,14 @@ export function handleSubmit(e) {
     document.querySelector('.error-text').classList.add('hidden');
   }
 
+  const showOverlay = ()=> {
+    document.querySelector('.overlay').classList.add('show');
+  }
+
   // check what text was put into the form field
   let formUrl = document.getElementById('url').value ? document.getElementById('url').value : 0;
   if (isUrl(formUrl)) {
+    showOverlay();
     hideError();
     postData(formUrl);
   } else {

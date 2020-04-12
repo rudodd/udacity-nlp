@@ -1,0 +1,31 @@
+footer {
+  border-top: solid 1px #323232;
+  color: #323232;
+  padding: 20px;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(250,250,250, 0.65);
+
+  &.show {
+    display: block;
+  }
+
+  p {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+}
