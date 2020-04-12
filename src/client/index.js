@@ -1,5 +1,5 @@
-import { handleSubmit } from './js/formHandler';
-import { updateDom } from './js/updateDom';
+import { handleSubmit } from './js/formHandler'
+import { updateDom } from './js/updateDom'
 import './styles/resets.scss'
 import './styles/base.scss'
 import './styles/footer.scss'
