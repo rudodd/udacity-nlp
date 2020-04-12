@@ -1,3 +1,5 @@
+import { updateDom } from './updateDom'
+
 /**
  * Form handler helper functions
  */
